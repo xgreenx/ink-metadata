@@ -10,6 +10,9 @@ startup = "0.1.1"
 ink = { path = "../ink" }
 psp22 = { path = "../psp22" }
 
+# `lto` should be enabled to execute the `on_startup` macro in another crates
 [profile.release]
-panic = "abort"
+lto = true
+
+[profile.dev]
 lto = true

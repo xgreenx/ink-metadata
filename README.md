@@ -8,11 +8,11 @@ After ink! can process this variable to generate an ABI.
 This schema allows defining events independently
 (And you also can use the same idea to generate ABI for all methods defined by the user).
 
-You should build it with enabled `lto`(it requires also enabling of `embed-bitcode`).
-TO test this example you need to run:
+You should build it with enabled `lto`(it is enabled in profile section of `hello_cargo/Cargo.toml`).
+To test this example you need to run:
 ```shell
 cd hello_cargo
-RUSTFLAGS="-Clto -Cembed-bitcode=yes" cargo build && ./target/debug/hello_cargo
+cargo build && ./target/debug/hello_cargo
 ```
 
 You should see the next output:
@@ -20,11 +20,11 @@ You should see the next output:
 Version: 3
 selector: 9, name: value
 selector: 1111111, name: some_ink_method
-selector: 131313, name: psp22_balance_of
+selector: 131313, name: psp22_balance_of <------ method from psp22 crate
 selector: 8, name: flip
-selector: 141414, name: psp22_transfer
+selector: 141414, name: psp22_transfer <------ method from psp22 crate
 selector: 0, name: fallback_method
-event: 111
+event: 111 <------ event from psp22 crate
 event: 42
 event: 123
 event: 321
