@@ -1,5 +1,5 @@
 [package]
-name = "psp22"
+name = "contracts"
 version = "0.1.0"
 authors = ["[your_name] <[your_email]>"]
 edition = "2018"
@@ -10,7 +10,7 @@ startup = "0.1.1"
 ink = { path = "../ink" }
 
 [lib]
-name = "psp22"
+name = "contracts"
 path = "lib.rs"
 crate-type = [
 	# Used for normal contract Wasm blobs.

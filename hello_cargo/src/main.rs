@@ -1,7 +1,8 @@
-// Commenting of this line will remove `on_startup` from `some_crate`.
+// Usage of something from `contracts` will import all `on_startup`(We only imported psp22 but it also contain stuff related to psp721).
+// Commenting of this line will remove `on_startup` from `contracts`.
 // But usage of any stuff from there will enable it again.
 #[allow(unused_imports)]
-use psp22::PSP22 as _;
+use contracts::psp22::PSP22 as _;
 
 startup::on_startup! {
     ink::MUTEX_MAP.lock().unwrap().methods.insert(8, "flip");
