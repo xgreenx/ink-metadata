@@ -18,13 +18,16 @@ cargo build && ./target/debug/hello_cargo
 You should see the next output:
 ```shell
 Version: 3
-selector: 9, name: value
+selector: 131313, name: psp22_balance_of <------ method from contracts crate
+selector: 161616, name: psp721_balance_of <------ method from contracts crate
 selector: 1111111, name: some_ink_method
-selector: 131313, name: psp22_balance_of <------ method from psp22 crate
-selector: 8, name: flip
-selector: 141414, name: psp22_transfer <------ method from psp22 crate
 selector: 0, name: fallback_method
-event: 111 <------ event from psp22 crate
+selector: 9, name: value
+selector: 141414, name: psp22_transfer <------ method from contracts crate
+selector: 8, name: flip
+selector: 151515, name: psp721_transfer <------ method from contracts crate
+event: 22 <------ event from contracts crate
+event: 721 <------ event from contracts crate
 event: 42
 event: 123
 event: 321
