@@ -1,8 +1,11 @@
 // Usage of something from `contracts` will import all `on_startup`(We only imported psp22 but it also contain stuff related to psp721).
 // Commenting of this line will remove `on_startup` from `contracts`.
 // But usage of any stuff from there will enable it again.
+//
+// But we can mark psp721 and psp22 as optional. It requires user to specify that he wants to include.
+// In this case we can include `on_startup` only for psp22.
 #[allow(unused_imports)]
-use contracts::psp22::PSP22 as _;
+use contracts::psp22 as _;
 
 startup::on_startup! {
     ink::MUTEX_MAP.lock().unwrap().methods.insert(8, "flip");

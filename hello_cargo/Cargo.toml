@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 startup = "0.1.1"
 ink = { path = "../ink" }
-contracts = { path = "../contracts" }
+contracts = { path = "../contracts", features = ["psp22"] }
 
 # `lto` should be enabled to execute the `on_startup` macro in another crates
 [profile.release]
